@@ -53,8 +53,8 @@ const BASE_URL = __ENV.BASE_URL || 'http://localhost'
 
 export default function () {
   const responses = http.batch([
-    ['GET', `${BASE_URL}/api/matches`,            null, { tags: { name: 'get_matches'     } }],
-    ['GET', `${BASE_URL}/api/leaderboard/global`, null, { tags: { name: 'get_leaderboard' } }],
+    ['GET', `${BASE_URL}/api/public/matches`,     null, { tags: { name: 'get_matches'     } }],
+    ['GET', `${BASE_URL}/api/public/leaderboard`, null, { tags: { name: 'get_leaderboard' } }],
     ['GET', `${BASE_URL}/api/auth/me`,            null, { tags: { name: 'get_profile'     } }],
   ])
 

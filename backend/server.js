@@ -15,6 +15,7 @@ import matchRoutes       from './routes/matches.js'
 import predictionRoutes  from './routes/predictions.js'
 import leaderboardRoutes from './routes/leaderboard.js'
 import adminRoutes       from './routes/admin.js'
+import publicRoutes      from './routes/public.js'
 
 const app    = express()
 const server = http.createServer(app)
@@ -47,6 +48,7 @@ app.use('/api/matches',     matchRoutes)
 app.use('/api/predictions', predictionRoutes)
 app.use('/api/leaderboard', leaderboardRoutes)
 app.use('/api/admin',       adminRoutes)
+app.use('/api/public',      publicRoutes)
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }))
 
