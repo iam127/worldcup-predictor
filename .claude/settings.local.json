@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path c:\\\\worldcup-predictor -Recurse -Force -File | Where-Object { $_.Extension -in @\\('.html', '.css', '.js', '.json', '.md'\\) -and -not $_.FullName.Contains\\('\\\\node_modules\\\\'\\) } | Select-Object @{n='Path';e={$_.FullName}} | Sort-Object Path)",
+      "Bash(Get-Content c:\\\\worldcup-predictor\\\\scripts\\\\seed-matches.sql)",
+      "Bash(docker exec *)",
+      "PowerShell(docker exec -i worldcup-predictor-postgres-1 psql -U postgres -d worldcup)",
+      "PowerShell(docker exec -i worldcup-predictor-postgres-1 psql -U postgres -d worldcup -c \"\\\\d matches\")",
+      "PowerShell(docker exec -i worldcup-predictor-postgres-1 psql -U postgres -d worldcup -c \"SELECT stage, home_team, away_team, match_time AT TIME ZONE 'America/New_York' AS local_et FROM matches ORDER BY match_time LIMIT 20;\")",
+      "PowerShell(docker exec -i worldcup-predictor-postgres-1 psql -U postgres -d worldcup -c \"SELECT stage, string_agg\\(DISTINCT home_team, ', ' ORDER BY home_team\\) || ', ' || string_agg\\(DISTINCT away_team, ', ' ORDER BY away_team\\) FROM matches GROUP BY stage ORDER BY stage;\")"
+    ]
+  }
+}

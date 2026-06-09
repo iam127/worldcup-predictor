@@ -1,0 +1,83 @@
+export const COUNTRY_CODES = {
+  // Americas
+  'Argentina':   'ar',
+  'Brazil':      'br',
+  'Uruguay':     'uy',
+  'Colombia':    'co',
+  'Ecuador':     'ec',
+  'Chile':       'cl',
+  'Paraguay':    'py',
+  'Bolivia':     'bo',
+  'Peru':        'pe',
+  'Venezuela':   've',
+  'USA':         'us',
+  'Mexico':      'mx',
+  'Canada':      'ca',
+  'Costa Rica':  'cr',
+  'Panama':      'pa',
+  'Honduras':    'hn',
+  'El Salvador': 'sv',
+  'Jamaica':     'jm',
+  // Europe
+  'France':         'fr',
+  'Germany':        'de',
+  'Spain':          'es',
+  'England':        'gb-eng',
+  'Portugal':       'pt',
+  'Netherlands':    'nl',
+  'Belgium':        'be',
+  'Italy':          'it',
+  'Croatia':        'hr',
+  'Denmark':        'dk',
+  'Switzerland':    'ch',
+  'Poland':         'pl',
+  'Austria':        'at',
+  'Serbia':         'rs',
+  'Scotland':       'gb-sct',
+  'Wales':          'gb-wls',
+  'Turkey':         'tr',
+  'Ukraine':        'ua',
+  'Sweden':         'se',
+  'Norway':         'no',
+  'Greece':         'gr',
+  'Romania':        'ro',
+  'Slovakia':       'sk',
+  'Albania':        'al',
+  'Czech Republic': 'cz',
+  'Hungary':        'hu',
+  'Russia':         'ru',
+  // Africa
+  'Morocco':      'ma',
+  'Senegal':      'sn',
+  'Ghana':        'gh',
+  'Nigeria':      'ng',
+  'Cameroon':     'cm',
+  'Egypt':        'eg',
+  'Algeria':      'dz',
+  'Tunisia':      'tn',
+  'Ivory Coast':  'ci',
+  'Mali':         'ml',
+  'South Africa': 'za',
+  // Asia & Oceania
+  'Japan':        'jp',
+  'South Korea':  'kr',
+  'Australia':    'au',
+  'Iran':         'ir',
+  'Saudi Arabia': 'sa',
+  'Qatar':        'qa',
+  'China':        'cn',
+  'Indonesia':    'id',
+  'Iraq':         'iq',
+  'Jordan':       'jo',
+  'UAE':          'ae',
+  'New Zealand':  'nz',
+}
+
+export function getCountryCode(team) {
+  return COUNTRY_CODES[team] || null
+}
+
+export function getFlagUrl(code, size = '48x36') {
+  if (!code) return null
+  return `https://flagcdn.com/${size}/${code.toLowerCase()}.png`
+}

@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# JWT Keys (sensitive)
+backend/keys/private.pem
+backend/keys/public.pem
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Docker volumes
+postgres_data/
+redis_data/
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# k6 results
+k6/results/
